@@ -1,1 +1,40 @@
-<h1>Hello from DevOps!</h1>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            background-color: #000;
+            color: #00FF41;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        #terminal {
+            border-right: 2px solid #00FF41;
+            padding-right: 5px;
+            animation: blink 0.7s infinite;
+        }
+        @keyframes blink { 50% { border-color: transparent; } }
+    </style>
+</head>
+<body>
+    <div id="terminal"></div>
+    <script>
+        const text = "INITIALIZING DEVOPS PIPELINE... SYSTEM ONLINE. YURA IS READY.";
+        let i = 0;
+        function type() {
+            if (i < text.length) {
+                document.getElementById("terminal").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(type, 100);
+            }
+        }
+        type();
+    </script>
+</body>
+</html>
